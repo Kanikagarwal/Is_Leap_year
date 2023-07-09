@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is it a leap Year?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="shortcut icon" href="calendar.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background: linear-gradient(to right, #000000, #0f9b0f);
+    min-height: 100vh;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    font-family: 'Red Hat Display', sans-serif;
+  }
+  h1{
+    font-size: 4rem;
+    margin-top: 4rem;
+  }
+  ::placeholder{
+    color: #ffffff9e;
+  }
+  input{
+    margin-top: 5rem;
+    width: 40vw;
+    height: 3vw;
+    border: 2px dashed white;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.25rem;
+  }
+  button{
+margin-top: 3rem;
+width: 10rem;
+height: 3rem;
+color: #fff;
+background-color: green;
+border: none;
+outline: none;
+font-size: 1.2rem;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 128, 0, 0.892);
+  }
+  p{
+    margin-top: 4rem;
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width:510px) {
+    html{
+      font-size: 60%;
+    }
+  }
+
+  @media screen and (max-width:300px){
+    html{
+      font-size: 40%;
+    }
+  }
+</style>
+<body>
+
+  <h1>Is It a Leap Year ?</h1>
+  <input type="text" id="myText" placeholder="Write a year">
+  <div>
+    <button onclick="myFunction()">Check</button>
+
+  </div>
+<p id="result"></p>
+  <script>
+    var year = document.getElementById("myText");
+    var result = document.getElementById("result");
+    function myFunction() {
+      if(year.value === ""){
+        result.innerText = "Please write the year you want to check...";
+      }
+      else if(year.value % 4 === 0){
+           if(year.value % 100 === 0){
+  if(year.value % 400 === 0){
+   result.innerText = "It is a leap year!!";
+  }
+  else{
+    result.innerText = "It is not a leap year!!";
+  }
+           }
+           else{
+           result.innerText = "It is a leap year!!";
+           }
+          }
+          else{
+           result.innerText = "It is not a leap year!!";
+          }
+    }
+  </script>
+</body>
+</html>
